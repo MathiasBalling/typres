@@ -1,11 +1,9 @@
 #import "../lib.typ": *
-
-
 // Use this for defaults
-#show: slide-template.with()
+#show: typres-template.with()
 
 // Or customize it
-#show: slide-template.with(
+#show: typres-template.with(
   aspect-ratio: "16-9", // 16-9 or 4-3
   size: 20pt, // Size of text
   fg-color: black, // Text color
@@ -57,12 +55,12 @@
 #empty-slide(title: "Empty", new-section: true)[= Empty]
 
 // Show the other progress
-#show: slide-template.with(
+#show: typres-template.with(
   progress-indicator: "dots", // none, dots, count, progress
 )
 #slide(title: "Progress Dots", new-section: true)[]
 
-#show: slide-template.with(
+#show: typres-template.with(
   progress-indicator: "count", // none, dots, count, progress
 )
 #slide(title: "Progress Count", new-section: true)[]

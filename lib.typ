@@ -32,7 +32,7 @@
   }
 }
 
-#let slide-template(
+#let typres-template(
   aspect-ratio: none, // 16-9 or 4-3
   size: none,
   fg-color: none,
@@ -141,11 +141,6 @@
     } else {
       panic("progress-indicator must be either 'none', 'dots', 'count', or 'progress'")
     }
-
-    let limit = calc.ceil(last / 2)
-
-    // [#pl.toolbox.progress-ratio()]
-    // TODO: Find page the logical slide is on
   }
 
   let progress-filled = {
