@@ -27,6 +27,7 @@ git submodule add https://github.com/MathiasBalling/typres
   accent-bg-color: rgb("#000055"), // Accent background color
   padding: 1.5em, // Padding around the slide
   progress-indicator: "progress", // none, dots, count, progress
+  show-notes: true, // Show notes
 )
 
 // Built-in title slides: title-slide, toc-slide, slide, empty-slide
@@ -48,5 +49,7 @@ git submodule add https://github.com/MathiasBalling/typres
   count-slide: true, // Count the slide in the progress indicator
 )[= Example slide]
 
-#empty-slide()
+#empty-slide()[]
+
+#note[Speaker notes.]
 ```

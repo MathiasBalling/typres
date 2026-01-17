@@ -12,6 +12,7 @@
   accent-bg-color: rgb("#000055"), // Accent background color
   padding: 1.5em, // Padding around the slide
   progress-indicator: "progress", // none, dots, count, progress
+  show-notes: true, // Show speaker notes
 )
 
 
@@ -53,6 +54,9 @@
 ]
 
 #empty-slide(title: "Empty", new-section: true)[= Empty]
+
+// Speaker notes (hide/show with show-notes option)
+#note[Speaker notes]
 
 // Show the other progress
 #show: typres-template.with(

@@ -11,6 +11,7 @@
 #let slide-progress-indicator = state("progress-indicator", "progress")
 #let slide-counter-position = state("counter-position", top + right)
 #let slide-counter-style = state("counter-style", "accent") // accent or normal
+#let slide-notes = state("notes", true) // accent or normal
 
 #let set_option(state, value, options: none, force: false) = {
   if value != none or force {
@@ -34,15 +35,16 @@
 
 #let typres-template(
   aspect-ratio: none, // 16-9 or 4-3
-  size: none,
-  fg-color: none,
-  bg-color: none,
+  size: none, // Size
+  fg-color: none, // Color
+  bg-color: none, // Color
   accent-fg-color: none,
   accent-bg-color: none,
   padding: none,
   progress-indicator: none, // none, dots, count, progress
   counter-position: none, // Alignment
   counter-style: none, // none | accent or normal
+  show-notes: none, // true or false
   body,
 ) = context {
   set_option(slide-aspect-ratio, aspect-ratio, options: ("16-9", "4-3"))
@@ -54,6 +56,7 @@
   set_option(slide-padding, padding)
   set_option(slide-progress-indicator, progress-indicator, options: ("none", "dots", "count", "progress"))
   set_option(slide-counter-style, counter-style, options: ("accent", "normal"))
+  set_option(slide-notes, show-notes)
 
   set_option(slide-counter-position, counter-position)
   let counter-position = slide-counter-position.get()
@@ -324,4 +327,12 @@
   count-slide: count-slide,
   body,
 )
+
+#let note(body) = context {
+  if slide-notes.get() {
+    set page(paper: "a4", margin: (top: 2cm, bottom: 2cm, left: 2.5cm, right: 2.5cm))
+    set text(size: 12pt, fill: black)
+    body
+  }
+}
 
